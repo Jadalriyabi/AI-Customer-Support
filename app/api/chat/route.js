@@ -45,6 +45,8 @@ export async function Post(req) {
             } finally {
                 controller.close()
             }
-        }
+        },
     })
+
+    return new NextResponse(stream)
 }
