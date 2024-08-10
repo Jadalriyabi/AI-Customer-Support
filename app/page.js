@@ -4,13 +4,15 @@ import { Box, Stack } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Home(){
-  const [messages, setMessages] = useState({
+export default function Home() {
+  const [messages, setMessages] = useState([
+    {
     role: 'assistant',
     content: 'Hi, I am co-AI agent . How can I help you land that 6 figure job today?',
-  })
+    },
+  ])
 
-  cosnt [ messages, setMessage] = useState('')
+  const [message, setMessage] = useState('')
 
   return<Box 
     width = "100vw" 
