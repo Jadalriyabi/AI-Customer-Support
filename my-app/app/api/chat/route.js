@@ -13,9 +13,12 @@ How can I assist you today?
 Remember, co-AI is designed to make the interview process smoother and more efficient for everyone involved. Let's get started!
 `;
 
-export async function Post(req) {
-    const openai = new OpenAI();
-    const data = await req.josn()
+export async function POST(req) {
+    const openai = new OpenAI({
+        baseURL: "https://openrouter.ai/api/v1",
+        apiKey: process.env.OPENROUTER_API_KEY,
+      });
+      const data = await req.json();
 
     const completion = await openai.chat.completions.create({
         messages: [
@@ -25,7 +28,7 @@ export async function Post(req) {
             },
             ...data,
         ],
-        model: 'gpt-4o-mini',
+        model: 'gpt-3.5-turbo',
         stream: true,
     })
     
