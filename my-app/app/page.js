@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   Avatar,
@@ -23,14 +23,16 @@ export default function Home() {
     {
       role: "assistant",
       content:
-        "Hello, I am Baymax, your personal AI companion. How can I help you today?",
+        "Hello, I am Dev Coach, your personal Software Engineering AI companion. How can I help you land that $100,000+ job today?",
     },
   ]);
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const sendMessage = async () => {
-    if (!message.trim() || isLoading) return; // Don't send empty messages
+    // Allow empty input
+    if (isLoading) return; // Don't send while loading
+
     setIsLoading(true);
 
     setMessage("");
@@ -108,6 +110,7 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      bgcolor={grey[100]} // Very light grey background
     >
       <Stack
         direction={"column"}
@@ -123,18 +126,18 @@ export default function Home() {
           justifyContent="center"
           alignItems="center"
         >
-          <Link href="https://github.com/iam-weijie/ai-companion">
+          <Link href="https://github.com/Jadalriyabi/Dev-Coach">
             <Avatar
-              src="baymax-pfp.png"
-              alt="Baymax"
+              src="logo.png"
+              alt="Dev Coach"
               sx={{ width: isMobile ? 50 : 70, height: isMobile ? 50 : 70 }}
             />
           </Link>
           <Typography
-            variant="body1"
+            variant="body2"
             sx={{ fontSize: isMobile ? "0.8rem" : "1rem" }}
           >
-            Baymax
+            Dev Coach
           </Typography>
         </Box>
         <Divider />
@@ -158,8 +161,10 @@ export default function Home() {
                 color={message.role === "assistant" ? "black" : "white"}
                 borderRadius={4}
                 p={1.6}
+                margin="10px 0" 
+                boxShadow={message.role === "assistant" ? "2px 2px 5px rgba(0, 0, 0, 0.1)" : "none"}
               >
-                {message.content}
+                <Typography>{message.content}</Typography>
               </Box>
             </Box>
           ))}

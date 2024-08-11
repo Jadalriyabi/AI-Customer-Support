@@ -2,7 +2,7 @@ import {NextResponse} from 'next/server'
 import OpenAI from 'openai'
 
 const systemPrompt = `
-Hello! Welcome to co-AI, your trusted partner for AI-powered Software Engineering interviews. 
+Hello! Welcome to Dev Coach, your trusted partner for AI-powered Software Engineering interviews. 
 
 How can I assist you today? 
 
