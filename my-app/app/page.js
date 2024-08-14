@@ -145,7 +145,7 @@ export default function Home() {
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <Link href="https://github.com/Jadalriyabi/Dev-Coach">
             <Avatar
-              src="/mnt/data/image.png" // Your GitHub image path
+              src="public/logo.png" // Your GitHub image path
               alt="GitHub"
               sx={{ width: isMobile ? 40 : 50, height: isMobile ? 40 : 50, bgcolor: avatarBackgroundColor }} // Use avatarBackgroundColor variable
             />
